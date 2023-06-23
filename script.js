@@ -67,18 +67,26 @@ function game() {
     console.log(`Draws: ${drawCount}`);
     console.log(`Loses: ${computerCount}`);
     if (drawCount > playerCount && drawCount > computerCount) {
-        return "This is a tie!";
+        console.log("This is a tie!");
     } else if (playerCount > computerCount && playerCount >= drawCount) {
-        return "You win!";
+        console.log ("You win!");
     } else if (computerCount > playerCount && computerCount >= drawCount) {
-        return "You lose!";
+        console.log( "You lose!");
     } else if (computerCount === playerCount && playerCount > drawCount) {
-        return "This is a tie!";
+        console.log ("This is a tie!");
     }
+    resetResults();
+    return ("The result is reset")
 }
 
 function countFollow() {
     console.log(`Wins: ${playerCount}`);
     console.log(`Draws: ${drawCount}`);
     console.log(`Loses: ${computerCount}`);
+}
+
+function resetResults() {
+    drawCount -= drawCount;
+    playerCount -= playerCount;
+    computerCount -= computerCount;
 }
