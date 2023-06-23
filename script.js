@@ -4,6 +4,10 @@ function getComputerChoice() {
     return choices[randomChoice];
 }
 
+let playerCount = 0;
+let computerCount = 0;
+let drawCount = 0;
+
 function playRound(playerSelection, computerSelection) {
     const playerChoice = prompt("rock, paper or scissors?");
     playerSelection = playerChoice.toLowerCase();
@@ -12,29 +16,36 @@ function playRound(playerSelection, computerSelection) {
     console.log(`player choice: ${playerChoice}`);
     console.log(`computer choice: ${computerChoice}`);
 
+
     switch (true) {
         case (playerSelection === computerSelection):
+            drawCount++;
             return "Draw";
-            break;
-        case (playerSelection === "rock" && computerSelection === "paper"):
+      
+          case (playerSelection === "rock" && computerSelection === "paper"):
+            computerCount++;
             return `You lose! ${computerSelection} beats ${playerSelection}`;
-            break;
-        case (playerSelection === "rock" && computerSelection === "scissors"):
+      
+          case (playerSelection === "rock" && computerSelection === "scissors"):
+            playerCount++;
             return `You win! ${playerChoice} beats ${computerSelection}`;
-            break;
-        case (playerSelection === "paper" && computerSelection === "rock"):
+      
+          case (playerSelection === "paper" && computerSelection === "rock"):
+            playerCount++;
             return `You win! ${playerSelection} beats ${computerSelection}`;
-            break;
-        case (playerSelection === "paper" && computerSelection === "scissors"):
+      
+          case (playerSelection === "paper" && computerSelection === "scissors"):
+            computerCount++;
             return `You lose! ${computerSelection} beats ${playerSelection}`;
-            break;
-        case (playerSelection === "scissors" && computerSelection === "rock"):
+      
+          case (playerSelection === "scissors" && computerSelection === "rock"):
+            computerCount++;
             return `You lose! ${computerSelection} beats ${playerSelection}`;
-            break;
-        case (playerSelection === "scissors" && computerSelection === "paper"):
+      
+          case (playerSelection === "scissors" && computerSelection === "paper"):
+            playerCount++;
             return `You win! ${playerSelection} beats ${computerSelection}`;
-            break;   
-        default: "you!";
+        default: return "you!";
     }
 }
 
@@ -44,4 +55,16 @@ function game() {
     playRound();
     playRound();
     playRound();
+    console.log(`Wins: ${playerCount}`);
+    console.log(`Draws: ${drawCount}`);
+    console.log(`Loses: ${computerCount}`);
+    if (drawCount > playerCount && drawCount > computerCount) {
+        return "This is a tie!";
+    } else if (playerCount > computerCount && playerCount >= drawCount) {
+        return "You win!";
+    } else if (computerCount > playerCount && computerCount >= drawCount) {
+        return "You lose!";
+    } else if (computerCount === playerCount && playerCount > drawCount) {
+        return "This is a tie!"
+    }
 }
