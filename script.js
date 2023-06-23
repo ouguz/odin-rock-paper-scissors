@@ -20,30 +20,37 @@ function playRound(playerSelection, computerSelection) {
     switch (true) {
         case (playerSelection === computerSelection):
             drawCount++;
+            countFollow();
             return "Draw";
       
           case (playerSelection === "rock" && computerSelection === "paper"):
             computerCount++;
+            countFollow();
             return `You lose! ${computerSelection} beats ${playerSelection}`;
       
           case (playerSelection === "rock" && computerSelection === "scissors"):
             playerCount++;
+            countFollow();
             return `You win! ${playerChoice} beats ${computerSelection}`;
       
           case (playerSelection === "paper" && computerSelection === "rock"):
             playerCount++;
+            countFollow();
             return `You win! ${playerSelection} beats ${computerSelection}`;
       
           case (playerSelection === "paper" && computerSelection === "scissors"):
             computerCount++;
+            countFollow();
             return `You lose! ${computerSelection} beats ${playerSelection}`;
       
           case (playerSelection === "scissors" && computerSelection === "rock"):
             computerCount++;
+            countFollow();
             return `You lose! ${computerSelection} beats ${playerSelection}`;
       
           case (playerSelection === "scissors" && computerSelection === "paper"):
             playerCount++;
+            countFollow();
             return `You win! ${playerSelection} beats ${computerSelection}`;
         default: return "you!";
     }
@@ -55,6 +62,7 @@ function game() {
     playRound();
     playRound();
     playRound();
+    console.log("Final Results:")
     console.log(`Wins: ${playerCount}`);
     console.log(`Draws: ${drawCount}`);
     console.log(`Loses: ${computerCount}`);
@@ -65,6 +73,12 @@ function game() {
     } else if (computerCount > playerCount && computerCount >= drawCount) {
         return "You lose!";
     } else if (computerCount === playerCount && playerCount > drawCount) {
-        return "This is a tie!"
+        return "This is a tie!";
     }
+}
+
+function countFollow() {
+    console.log(`Wins: ${playerCount}`);
+    console.log(`Draws: ${drawCount}`);
+    console.log(`Loses: ${computerCount}`);
 }
