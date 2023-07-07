@@ -34,7 +34,7 @@
     align-items: center;
 }
 
-img:hover {
+div > img:hover {
     transform: scale(1.2);
     border: black 6px solid;
 }
@@ -49,11 +49,38 @@ button {
     color: yellow;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 #reset-button {
     height: 100px;
 }
 img#reset-button:hover {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
     transition-duration: 2s;
+}
+
+#github-icon {
+    height: 40px;
+}
+
+/* .tooltip {
+    position: relative;
+    display: inline-block;
+} */
+.tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: yellow;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    font-size: 24px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }

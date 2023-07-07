@@ -18,7 +18,7 @@ buttons.addEventListener('click', (event) => {
 }});
 const texts = document.querySelector('#texts');
 const para = document.createElement('p');
-para.textContent = `Welcome to the Game!`;
+para.textContent = `Reach 5 first for the win!`;
 texts.appendChild(para);
 const paraWin = document.createElement('p');
 paraWin.style.fontSize = '32px'
