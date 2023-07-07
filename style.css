@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    height: auto;
+    justify-content: center;
+    height: 800px;
+    width: 100%;
+    font-size: 48px;
+
+}
+
+.header {
+    background-color: black;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+#texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button:hover {
+    background-color: black ;
+    color: yellow;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+button {
+    padding: 50px;
+    font-size: 25px;
+}
+
+.footer {
+    background-color: black;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+}
