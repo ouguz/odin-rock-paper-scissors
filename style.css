@@ -25,7 +25,7 @@
 #buttons {
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 24px;
 }
 
 #texts {
@@ -34,11 +34,9 @@
     align-items: center;
 }
 
-button:hover {
-    background-color: black ;
-    color: yellow;
-    font-weight: bold;
-    font-size: 36px;
+img:hover {
+    transform: scale(1.2);
+    border: black 6px solid;
 }
 
 button {
@@ -51,4 +49,11 @@ button {
     color: yellow;
     display: flex;
     justify-content: center;
+}
+#reset-button {
+    height: 100px;
+}
+img#reset-button:hover {
+    transform: rotate(360deg);
+    transition-duration: 2s;
 }

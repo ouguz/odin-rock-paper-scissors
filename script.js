@@ -13,7 +13,7 @@ let roundNo = 1;
 const buttons = document.querySelector('#buttons');
 buttons.addEventListener('click', (event) => {
   const target = event.target;
-  if (target.nodeName === 'BUTTON') {
+  if (target.nodeName === 'IMG') {
   playRound(event.target.getAttribute('id'),getComputerChoice());
 }});
 const texts = document.querySelector('#texts');
@@ -21,10 +21,10 @@ const para = document.createElement('p');
 para.textContent = `Welcome to the Game!`;
 texts.appendChild(para);
 const paraWin = document.createElement('p');
-paraWin.style.fontSize = '48px'
+paraWin.style.fontSize = '32px'
 texts.appendChild(paraWin);
 const paraLose = document.createElement('p');
-paraLose.style.fontSize = '48px'
+paraLose.style.fontSize = '32px'
 texts.appendChild(paraLose);
 const resetButton = document.querySelector('#reset-button');
 // resetButton.addEventListener('click', () => {
